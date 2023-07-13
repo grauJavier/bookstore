@@ -10,35 +10,33 @@
   <img src="./public/screen_2.png" alt="" style="max-width: 300px;" />
   <img src="./public/screen_3.png" alt="" style="max-width: 300px;" />
 </div>
+
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Math Magicians (Math-Magicians)](#Math-Magicians)
+- [📖 Bookstore Project](#bookstore-project)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-  - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#getting-started)
     - [Install](#-install)
     - [Usage](#-usage)
-    - [Run tests](#run-tests)
-    - [Deployment](#deployment)
+    - [Aviable Scripts](#aviable-scripts)
   - [👥 Authors ](#-author-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
-  - [❓ FAQ (OPTIONAL) ](#-faq-optional-)
   - [📝 License ](#-license-)
- 
+
 <!-- PROJECT DESCRIPTION -->
 <br>
 
-# 📖 Math Magicians (Math-Magicians) <a name="Math-Magicians"></a>
+# 📖 Bookstore Project <a name="bookstore-project"></a>
 
- "Math Magicians" is an interactive React website designed for mathematics enthusiasts. It serves as a Single Page App (SPA) where users can perform basic calculations and explore random quotes related to mathematics.
+The Bookstore is a web application that allows you to manage and display a collection of books with a focus on learning and implementing React and Redux in a real application.
 <br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -51,10 +49,9 @@ The following stacks were used
 
 <details style="color:rgb(87, 247, 255);">
   <ul>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Javascript</a></li>
-    <li><a href="hhttps://create-react-app.dev/">Create React App</a></li>
+    <li><a href="https://react.dev/">React</a></li>
+    <li><a href="https://redux.js.org/">Redux</a></li>
+    <li><a href="https://vitejs.dev/">Vite</a></li>
  </ul>
 </details>
 
@@ -63,36 +60,30 @@ The following stacks were used
 
 ### Key Features <a name="key-features"></a>
 
-- **ReactJS library**
-- **Using JSX syntax**
-- **Unit test with jest**
-- **Boostrap**
+- **Display a list of books:** The application provides a visually appealing interface to showcase a collection of books, including their titles, authors, and other relevant information.
+- **Add a book:** Users can add new books to the collection by providing the necessary details such as the book title, author name, and any additional information.
+- **Remove a selected book:** Users have the ability to remove a selected book from the collection, effectively managing the list of books according to their preferences.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### 🚀 Live Demo <a name="live-demo"></a>
-<a href="https://math-magicians-bonpa.netlify.app/">Live Demo</a>
-
-<!-- GETTING STARTED -->
-<br>
-
 # 💻 Getting Started <a name="getting-started"></a>
-
 
 Clone this repository to your desired folder:
 
 Example commands:
 
 ```bash
-  git clone git@github.com:PabloBona/Math-Magicians.git
+  git clone git@github.com:grauJavier/bookstore.git
 ```
+
 <br>
 
 # 📖 Install
 
 Install this project's dependencies with:
+
 ```
-cd Math-Magicians
+cd .\bookstore\
 npm install
 ```
 
@@ -103,7 +94,7 @@ npm install
 To run the project, execute the following command:
 
 ```bash
- npm run start
+ npm run preview
 ```
 
 Runs the app in the development mode.\
@@ -117,65 +108,44 @@ You may also see any lint errors in the console.
 # Run tests
 
 ```bash
-  npm test
+  npm run test
 ```
 
 <br>
 
-# 📖 Run linterns tests
+<!-- AVIABLE SCRIPTS -->
 
-If you follow the tutorial above to setup linters then you can run these tests
+# Available Scripts <a href="aviable-scrpts"></a>
 
-```$
-  npx hint .
-```
+In the project directory, you can run the following scripts using `npm run-script`:
 
-```$
-  npx stylelint "**/*.scss"
-```
+### `dev`
+Runs the app in development mode using Vite.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
+The page will reload when you make changes, and any lint errors will be displayed in the console.
 
-or if you use css then run this instead of the latter command above
-
-```$
-  npx stylelint "**/*.{css,scss}"
-```
-
-<br>
-
-# Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
+### `build`
+Builds the app for production using Vite.\
+The optimized and minified output files will be placed in the `build` folder.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `lint`
+Runs ESLint on the source code in the `src` directory.\
+It checks for any linting errors and provides feedback in the console.\
+The command includes additional options to report unused disable directives and suppress warnings.
 
-### `npm run eject`
+### `preview`
+Launches a preview of the built app using Vite.\
+It serves the optimized production build and allows you to view it in your browser.\
+This is useful for testing the app before deployment.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Note: The `eject` script is not available in this project. Once you eject from a Vite project, there is no going back.**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Deployment
 
-You can deploy this project using: GitHub Pages or Netlify
+**Coming soon!**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -183,11 +153,10 @@ You can deploy this project using: GitHub Pages or Netlify
 
 ### 👥 Author <a name="authors"></a>
 
-
-- 👤 **Pablo Bonasera**
-
-  - GitHub: [@BonPa](https://github.com/PabloBona)
-  - LinkedIn: [Pablo Bonasera](https://www.linkedin.com/in/pablo-bonasera-142327257/)
+👤 **Javier Grau**
+- GitHub: [@grauJavier](https://github.com/grauJavier)
+- Twitter: [@jgrauchile](https://twitter.com/jgrauchile)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/javiergrau)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -195,8 +164,8 @@ You can deploy this project using: GitHub Pages or Netlify
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Customizable notifications and alerts**
-- [ ] **Multilingual support**
+- [ ] **Much more interesting content**
+- [ ] **Professional embellishment with CSS or JavaScript**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -206,7 +175,7 @@ You can deploy this project using: GitHub Pages or Netlify
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/PabloBona/Math-Magicians/issues).
+Feel free to check the [issues page](https://github.com/grauJavier/bookstore/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -214,7 +183,7 @@ Feel free to check the [issues page](https://github.com/PabloBona/Math-Magicians
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project you can follow me on github for more.
+If you like this project gift us with a star, follow  on [GitHub](https://github.com/grauJavier/) and a nice comment!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -222,17 +191,7 @@ If you like this project you can follow me on github for more.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- We would like to express our heartfelt gratitude to Microvere for the invaluable learning experience they have provided. The supportive community, dedicated mentors, and remote collaboration opportunities have enhanced my technical skills and prepared me for real-world projects.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-- **Are the linters necessary?**
-
-  - It is a good practice to install and use them as they guide you towards best practice, but yes you can do without.
+- We extend our deepest appreciation to Microvere for offering us an extraordinary learning experience that has been truly invaluable. The inclusive and supportive community, along with the guidance of dedicated mentors, has played a pivotal role in honing our technical skills and preparing us for real-world projects. We are sincerely grateful for the opportunities provided for remote collaboration, which have further enriched our learning journey.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -240,6 +199,6 @@ If you like this project you can follow me on github for more.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/PabloBona/Math-Magicians/blob/setup/create-react-linterns/MIT.md) licensed.
+This project is [MIT](https://github.com/grauJavier/bookstore/MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
