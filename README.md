@@ -201,6 +201,6 @@ If you like this project gift us with a star, follow  on [GitHub](https://github
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/grauJavier/bookstore/MIT.md) licensed.
+This project is [MIT](./MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
