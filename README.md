@@ -47,8 +47,8 @@ The Bookstore is a web application that allows you to manage and display a colle
   </ul>
 </details>
 
-**The following stacks were used:**
-<details style="color:rgb(87, 247, 255);">
+<details>
+  <summary>Stacks</summary>
   <ul>
     <li><a href="https://react.dev/">React</a></li>
     <li><a href="https://redux.js.org/">Redux</a></li>
