@@ -193,7 +193,7 @@ If you like this project gift us with a star, follow  on [GitHub](https://github
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- We extend our deepest appreciation to Microvere for offering us an extraordinary learning experience that has been truly invaluable. The inclusive and supportive community, along with the guidance of dedicated mentors, has played a pivotal role in honing our technical skills and preparing us for real-world projects. We are sincerely grateful for the opportunities provided for remote collaboration, which have further enriched our learning journey.
+We extend our deepest appreciation to Microvere for offering us an extraordinary learning experience that has been truly invaluable. The inclusive and supportive community, along with the guidance of dedicated mentors, has played a pivotal role in honing our technical skills and preparing us for real-world projects. We are sincerely grateful for the opportunities provided for remote collaboration, which have further enriched our learning journey.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
