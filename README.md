@@ -121,21 +121,25 @@ You may also see any lint errors in the console.
 In the project directory, you can run the following scripts using `npm run-script`:
 
 ### `dev`
+
 Runs the app in development mode using Vite.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
 The page will reload when you make changes, and any lint errors will be displayed in the console.
 
 ### `build`
+
 Builds the app for production using Vite.\
 The optimized and minified output files will be placed in the `build` folder.\
 Your app is ready to be deployed!
 
 ### `lint`
+
 Runs ESLint on the source code in the `src` directory.\
 It checks for any linting errors and provides feedback in the console.\
 The command includes additional options to report unused disable directives and suppress warnings.
 
 ### `preview`
+
 Launches a preview of the built app using Vite.\
 It serves the optimized production build and allows you to view it in your browser.\
 This is useful for testing the app before deployment.
@@ -155,6 +159,7 @@ This is useful for testing the app before deployment.
 ### 👥 Author <a name="authors"></a>
 
 👤 **Javier Grau**
+
 - GitHub: [@grauJavier](https://github.com/grauJavier)
 - Twitter: [@jgrauchile](https://twitter.com/jgrauchile)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/javiergrau)
@@ -184,7 +189,7 @@ Feel free to check the [issues page](https://github.com/grauJavier/bookstore/iss
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project gift us with a star, follow  on [GitHub](https://github.com/grauJavier/) and a nice comment!
+If you like this project gift us with a star, follow on [GitHub](https://github.com/grauJavier/) and a nice comment!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
