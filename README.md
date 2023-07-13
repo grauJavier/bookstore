@@ -1,21 +1,9 @@
 <a name="readme-top"></a>
 
-<div align="center">
- <br>
- <h1 style="color:rgb(87, 247, 255);border: 3px solid rgb(87, 247, 255);">Math Magicians</h1>
- <br>
-</div>
-<div style="display: flex; justify-content: center; gap: 10px;">
-  <img src="./public/screen_1.png" alt="" style="max-width: 300px;" />
-  <img src="./public/screen_2.png" alt="" style="max-width: 300px;" />
-  <img src="./public/screen_3.png" alt="" style="max-width: 300px;" />
-</div>
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
-- [📗 Table of Contents](#-table-of-contents)
 - [📖 Bookstore Project](#bookstore-project)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
@@ -44,6 +32,20 @@ The Bookstore is a web application that allows you to manage and display a colle
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
+
+<details>
+  <summary>Version Control System</summary>
+  <ul>
+    <li><a href="https://git-scm.com/">Git</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Repository Hosting Service</summary>
+  <ul>
+    <li><a href="https://github.com/">GitHub</a></li>
+  </ul>
+</details>
 
 The following stacks were used
 
