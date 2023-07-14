@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
 function BookCard({ bookName, author, genre, progressPorcentage = 0, currentChapter }) {
   return (
@@ -45,6 +45,14 @@ function BookCard({ bookName, author, genre, progressPorcentage = 0, currentChap
     </article>
   );
 }
+
+BookCard.propTypes = {
+  bookName: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired,
+  progressPorcentage: PropTypes.number,
+  currentChapter: PropTypes.string.isRequired,
+};
 
 function BookList() {
   const books = [

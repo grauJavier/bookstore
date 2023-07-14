@@ -8,10 +8,10 @@ header {
   justify-content: space-between;
   gap: 3rem;
   border-bottom: 1px solid var(--white-three);
-}   
+}
 
 #header__logo {
-    min-width: 15rem;
+  min-width: 15rem;
 }
 
 #navbar {
@@ -27,7 +27,7 @@ header {
 }
 
 .navbar__item--inactive {
-    color: var(--very-light-pink) !important;
+  color: var(--very-light-pink) !important;
 }
 
 #navbar__avatar {
