@@ -25,16 +25,13 @@ button {
   appearance: none;
   border: none;
   outline: none;
-  background: none;
 }
 
 /* COLOR PALETTE */
 :root {
   --azure: #0290ff;
   --black: #1e1e1e;
-  --black-5: #0000000d;
   --black-two: #121212;
-  --bubble-gum-pink: #ff5ab7;
   --medium-blue: #307bbe;
   --pale-grey: #f5f6fa;
   --pinkish-grey: #c7c7c7;
@@ -42,99 +39,139 @@ button {
   --white: #fafafa;
   --white-two: #fff;
   --white-three: #e8e8e8;
+  --grey: #888;
 }
 
 /* TEXT-STYLE */
+
+/* Roboto Slab */
+.text-style-1,
+.text-style-4,
+.text-style-5,
+.text-style-7,
+.text-style-8,
+.text-style-11 {
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+}
+
 .text-style-1 {
   color: var(--white-two);
-  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
   font-size: 0.813rem;
-  font-stretch: normal;
-  font-style: normal;
   font-weight: bold;
   letter-spacing: 0.5px;
-  line-height: normal;
   text-align: center;
-}
-
-.text-style-2 {
-  color: var(--black-two);
-  font-family: 'Montserrat', 'Courier New', Courier, monospace;
-  font-size: 0.875rem;
-  font-stretch: normal;
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: normal;
-  line-height: normal;
-}
-
-.text-style-3 {
-  color: var(--azure);
-  font-family: 'Montserrat', 'Courier New', Courier, monospace;
-  font-size: 1.875rem;
-  font-stretch: normal;
-  font-style: normal;
-  font-weight: bold;
-  letter-spacing: normal;
-  line-height: normal;
 }
 
 .text-style-4 {
   color: var(--black-two);
-  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
   font-size: 1rem;
-  font-stretch: normal;
-  font-style: normal;
   font-weight: 300;
   letter-spacing: -0.4px;
-  line-height: normal;
 }
 
 .text-style-5 {
   color: var(--black-two);
-  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
   font-size: 1.375rem;
-  font-stretch: normal;
-  font-style: normal;
   font-weight: bold;
   letter-spacing: -0.2px;
-  line-height: normal;
-}
-
-.text-style-6 {
-  color: var(--black-two);
-  font-family: 'Montserrat', 'Courier New', Courier, monospace;
-  font-size: 0.813rem;
-  font-stretch: normal;
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: 1.9px;
-  line-height: normal;
-  text-transform: uppercase;
 }
 
 .text-style-7 {
-  color: var(--black-two);
-  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  color: var(--grey);
   font-size: 0.813rem;
-  font-stretch: normal;
-  font-style: normal;
   font-weight: 300;
-  letter-spacing: normal;
-  line-height: normal;
+  text-transform: uppercase;
 }
 
 .text-style-8 {
   color: #4386bf;
-  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
   font-size: 0.875rem;
-  font-stretch: normal;
-  font-style: normal;
   font-weight: 300;
-  letter-spacing: normal;
-  line-height: normal;
 }
 
+.text-style-11 {
+  font-size: 0.813rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--white-two);
+}
+
+/* Montserrat and Courier New */
+.text-style-2,
+.text-style-3,
+.text-style-6,
+.text-style-9,
+.text-style-10,
+.text-style-12,
+.text-style-13 {
+  font-family: 'Montserrat', 'Courier New', Courier, monospace;
+}
+
+.text-style-2 {
+  color: var(--grey);
+  font-size: 0.875rem;
+}
+
+.text-style-3 {
+  color: var(--azure);
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+.text-style-6 {
+  color: var(--black-two);
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+  text-transform: uppercase;
+}
+
+.text-style-9 {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: var(--grey);
+}
+
+.text-style-10 {
+  font-size: 2rem;
+  color: var(--black-two);
+}
+
+.text-style-12 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  color: var(--grey);
+  text-transform: uppercase;
+}
+
+.text-style-13 {
+  font-size: 1rem;
+  letter-spacing: -0.15px;
+  color: var(--very-light-pink);
+}
+
+/* LINES */
+
+.x-line {
+  width: 100%;
+  height: 1px;
+  border: solid 1px var(--white-three);
+}
+
+.y-line {
+  width: 1px;
+  height: 4.375rem;
+  border: solid 1px var(--white-three);
+}
+
+.short-y-line {
+  width: 1px;
+  height: 1.5rem;
+  border: solid 1px var(--white-three);
+}
+
+/* GENERAL BACKGROUND */
 body {
   background-color: var(--white);
 }
