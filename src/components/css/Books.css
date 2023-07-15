@@ -1,0 +1,115 @@
+/* BOOK LAYOUT */
+
+#books {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 6.95vw 6rem 6.95vw;
+  gap: 2.5rem;
+}
+
+/* BOOK-LIST LAYOUT */
+#book-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.book-card {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 2fr 1fr 1fr;
+  width: 100%;
+  padding: 1.7rem;
+  border-radius: 4px;
+  border: solid 1px var(--white-three);
+  background-color: var(--white-two);
+}
+
+.book-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.book-card__action-list {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.book-card__progress {
+  margin-left: 1.5rem;
+}
+
+.progress-porcentage__graphic-details {
+  display: flex;
+  gap: 1.3rem;
+}
+
+.progress-porcentage__graphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: conic-gradient(#307bbe, #379cf6);
+  border-radius: 50%;
+  width: 3.45rem;
+  height: 3.45rem;
+}
+
+.progress-porcentage__graphic-circle {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--white-two);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px conic-gradient(#307bbe, #379cf6); /* stylelint-disable-line */
+}
+
+.book-card__progress-title {
+  margin-bottom: 0.5rem;
+}
+
+.book-card__progress-porcentage {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.progress__update-button,
+#add-book__button {
+  background-color: var(--azure);
+  padding: 0.4rem 1.3rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+}
+
+/* ADD NEW BOOK */
+#add-book h2 {
+  margin-bottom: 1.2rem;
+}
+
+#add-book__form {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+#add-book__input-book-title,
+#add-book__input-author {
+  background-color: var(--white-two);
+  outline: solid 1px var(--white-three);
+  padding: 0.8rem 1.6rem;
+}
+
+#add-book__input-book-title {
+  width: 50%;
+}
+
+#add-book__input-author {
+  width: 25%;
+}
+
+#add-book__button {
+  margin: 0;
+  padding: 0.85rem 3rem;
+}
