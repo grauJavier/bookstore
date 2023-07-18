@@ -8,22 +8,22 @@ const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    addBook: (bookName, author, state) => {
-      const newBook = [
-        {
-          bookName: { bookName },
-          author: { author },
-          genre: 'unkown',
-          progressPorcentage: 0,
-          currentChapter: 'unkown',
-        },
-      ];
+    addBook: (state, action) => {
+      const { bookName, author } = action.payload;
+
+      const newBook = {
+        bookName,
+        author,
+        genre: 'unknown',
+        progressPercentage: 0,
+        currentChapter: 'unknown',
+      };
 
       state.books = state.books.concat(newBook);
     },
     removeBook: (state, action) => {
-        const bookId = action.payload;
-        state.books = state.books.filter((book) => book.id !== bookId);
+      const bookId = action.payload;
+      state.books = state.books.filter((book) => book.id !== bookId);
     },
   },
 });
