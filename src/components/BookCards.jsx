@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
-import bookList from '../bookList';
+import { useDispatch, useSelector} from 'react-redux';
+import { removeBook } from '../redux/books/booksSlice';
 
-function BookCard({ bookName, author, genre, progressPorcentage = 0, currentChapter }) {
+function BookCard({ item_id, title, author, category, progressPorcentage = 0, currentChapter }) {
+  const dispatch = useDispatch();
+
   return (
     <article className="book-card">
       <div className="book-card__details">
         <div className="book">
-          <h4 className="book__genre text-style-9">{genre}</h4>
-          <h2 className="book__name text-style-5">{bookName}</h2>
+          <h4 className="book__category text-style-9">{category}</h4>
+          <h2 className="book__name text-style-5">{title}</h2>
           <h3 className="book__author text-style-8">{author}</h3>
         </div>
         <ul className="book-card__action-list text-style-8">
@@ -16,7 +19,7 @@ function BookCard({ bookName, author, genre, progressPorcentage = 0, currentChap
           </li>
           <span className="short-y-line"></span>
           <li className="action__item">
-            <a href="#">Remove</a>
+            <a href="#" onClick={() => {dispatch(removeBook(item_id))}}>Remove</a>
           </li>
           <span className="short-y-line"></span>
           <li className="action__item">
@@ -48,20 +51,23 @@ function BookCard({ bookName, author, genre, progressPorcentage = 0, currentChap
 }
 
 BookCard.propTypes = {
-  bookName: PropTypes.string.isRequired,
+  item_id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
   progressPorcentage: PropTypes.number,
   currentChapter: PropTypes.string.isRequired,
 };
 
 function BookList() {
+  const bookList = useSelector((state) => state.bookshelf.books);
   const output = bookList.map((book, index) => (
     <BookCard
       key={index}
-      bookName={book.bookName}
+      item_id={book.item_id}
+      title={book.title}
       author={book.author}
-      genre={book.genre}
+      category={book.category}
       progressPorcentage={book.progressPorcentage}
       currentChapter={book.currentChapter}
     />
