@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import bookList from '../bookList';
 
 function BookCard({ bookName, author, genre, progressPorcentage = 0, currentChapter }) {
   return (
@@ -55,31 +56,7 @@ BookCard.propTypes = {
 };
 
 function BookList() {
-  const books = [
-    {
-      bookName: 'The Hunger Games',
-      author: 'Suzanne Collins',
-      genre: 'Action',
-      progressPorcentage: 64,
-      currentChapter: 'Chapter 17',
-    },
-    {
-      bookName: 'Dune',
-      author: 'Frank Herbert',
-      genre: 'Science Fiction',
-      progressPorcentage: 8,
-      currentChapter: 'Chapter 3: "A Lesson Learned"',
-    },
-    {
-      bookName: 'Capital in the Twenty-First Century',
-      author: 'Suzanne Collins',
-      genre: 'Economy',
-      progressPorcentage: 0,
-      currentChapter: 'Chapter 17',
-    },
-  ];
-
-  const output = books.map((book, index) => (
+  const output = bookList.map((book, index) => (
     <BookCard
       key={index}
       bookName={book.bookName}
