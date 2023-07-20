@@ -7,8 +7,7 @@ export default function AddNewBook() {
   const [bookTitle, setBookTitle] = useState('');
   const [author, setAuthor] = useState('');
 
-  const handleAddBook = (e) => {
-    e.preventDefault();
+  const handleAddBook = () => {
     dispatch(addBook({ title: bookTitle, author }));
     setBookTitle('');
     setAuthor('');
@@ -25,6 +24,7 @@ export default function AddNewBook() {
           className="text-style-13"
           value={bookTitle}
           onChange={(e) => setBookTitle(e.target.value)}
+          required
         ></input>
         <input
           type="text"
@@ -33,8 +33,14 @@ export default function AddNewBook() {
           className="text-style-13"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
+          required
         ></input>
-        <button type="submit" id="add-book__button" className="text-style-1" onClick={handleAddBook}>
+        <button
+          type="button"
+          id="add-book__button"
+          className="text-style-1"
+          onClick={handleAddBook}
+        >
           Add Book
         </button>
       </form>
