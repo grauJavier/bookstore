@@ -1,0 +1,6 @@
+#categories {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 6.95vw 6rem 6.95vw;
+  gap: 2.5rem;
+}

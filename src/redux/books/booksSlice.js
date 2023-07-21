@@ -1,11 +1,21 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const URL =
-  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/AZWwdB6xdu3Biv6ZvG64/books';
+export const URL =
+  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/AZWwdB6xdu3Biv6ZvG64/books/';
 export const getBooksFromServer = createAsyncThunk('bookshelf/getBooks', async () => {
+  const formatApiResponse = (response) => {
+    const formattedData = Object.keys(response).map((key) => {
+      return {
+        item_id: key,
+        ...response[key][0],
+      };
+    });
+    return formattedData;
+  };
+
   const response = await axios.get(URL);
-  return response.data;
+  return formatApiResponse(response.data);
 });
 
 export const addBookToServer = createAsyncThunk('bookshelf/addBook', async (bookData) => {
@@ -26,24 +36,14 @@ const booksSlice = createSlice({
   name: 'bookshelf',
   initialState,
   reducers: {
-    addBook: (state, action) => {
-      const { title, author } = action.payload;
-
-      const newBook = {
-        item_id: 'item' + state.books.length,
-        title,
-        author,
-        category: 'unknown',
-        progressPercentage: 0,
-        currentChapter: 'unknown',
-      };
-
-      addBookToServer(newBook);
+    addBookFromList: (state, action) => {
+      const newBook = action.payload;
+      state.books = state.books.concat(newBook);
     },
 
-    removeBook: (action) => {
+    removeBookFromList: (state, action) => {
       const bookId = action.payload;
-      removeBookFromServer(bookId);
+      state.books = state.books.filter((book) => book.item_id !== bookId);
     },
   },
   extraReducers: (builder) => {
@@ -58,9 +58,9 @@ const booksSlice = createSlice({
       .addCase(getBooksFromServer.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
-      });
+      })
   },
 });
 
-export const { addBook, removeBook } = booksSlice.actions;
+export const { addBookFromList, removeBookFromList } = booksSlice.actions;
 export default booksSlice.reducer;

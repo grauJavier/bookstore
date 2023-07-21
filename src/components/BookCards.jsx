@@ -1,10 +1,21 @@
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector} from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  removeBookFromServer,
+  removeBookFromList,
+  getBooksFromServer,
+} from '../redux/books/booksSlice';
+import { useEffect } from 'react';
 
-function BookCard({ item_id, title, author, category, progressPorcentage = 0, currentChapter }) {
-  const dispatch = useDispatch();
-
+function BookCard({
+  item_id,
+  title,
+  author,
+  category = 'unknown',
+  progressPorcentage = 0,
+  currentChapter = 'unknown',
+  handleRemoveBook,
+}) {
   return (
     <article className="book-card">
       <div className="book-card__details">
@@ -15,15 +26,17 @@ function BookCard({ item_id, title, author, category, progressPorcentage = 0, cu
         </div>
         <ul className="book-card__action-list text-style-8">
           <li className="action__item">
-            <a href="#">Comments</a>
+            <a href="">Comments</a>
           </li>
           <span className="short-y-line"></span>
           <li className="action__item">
-            <a href="#" onClick={() => {dispatch(removeBook(item_id))}}>Remove</a>
+            <a href="#" onClick={() => handleRemoveBook(item_id)}>
+              Remove
+            </a>
           </li>
           <span className="short-y-line"></span>
           <li className="action__item">
-            <a href="#">Edit</a>
+            <a href="">Edit</a>
           </li>
         </ul>
       </div>
@@ -54,32 +67,37 @@ BookCard.propTypes = {
   item_id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
+  category: PropTypes.string,
   progressPorcentage: PropTypes.number,
-  currentChapter: PropTypes.string.isRequired,
+  currentChapter: PropTypes.string,
+  handleRemoveBook: PropTypes.func.isRequired,
 };
 
-function BookList() {
-  const bookList = useSelector((state) => state.bookshelf.books);
-  const output = bookList.map((book, index) => (
-    <BookCard
-      key={index}
-      item_id={book.item_id}
-      title={book.title}
-      author={book.author}
-      category={book.category}
-      progressPorcentage={book.progressPorcentage}
-      currentChapter={book.currentChapter}
-    />
-  ));
-
-  return output;
-}
-
 export default function BookCards() {
+  const dispatch = useDispatch();
+  const bookList = useSelector((state) => state.bookshelf.books);
+  const allBooks = Object.values(bookList);
+
+  const handleRemoveBook = (item_id) => {
+    dispatch(removeBookFromList(item_id));
+    dispatch(removeBookFromServer(item_id));
+  };
+
+  useEffect(() => {
+    dispatch(getBooksFromServer());
+  }, [dispatch]);
+
   return (
     <section id="book-cards">
-      <BookList />
+      {allBooks.map((book) => (
+        <BookCard
+          key={book.item_id}
+          item_id={book.item_id}
+          title={book.title}
+          author={book.author}
+          handleRemoveBook={handleRemoveBook}
+        />
+      ))}
     </section>
   );
 }

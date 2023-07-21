@@ -1,3 +1,9 @@
+import './css/Categories.css';
+
 export default function Categories() {
-  return <h1>Categories Page</h1>;
+  return (
+    <div id="categories">
+      <h1 className="text-style-12">Categories Page</h1>
+    </div>
+  );
 }
