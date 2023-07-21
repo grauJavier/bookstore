@@ -96,6 +96,7 @@
 
 #add-book__input-book-title,
 #add-book__input-author {
+  color: var(--black-two);
   background-color: var(--white-two);
   outline: solid 1px var(--white-three);
   padding: 0.8rem 1.6rem;

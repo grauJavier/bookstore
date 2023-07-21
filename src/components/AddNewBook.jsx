@@ -1,15 +1,23 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { addBookFromList, addBookToServer } from '../redux/books/booksSlice';
 
 export default function AddNewBook() {
   const dispatch = useDispatch();
   const [bookTitle, setBookTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const bookList = useSelector((state) => state.bookshelf.books);
 
-  const handleAddBook = (e) => {
-    e.preventDefault();
-    dispatch(addBook({ title: bookTitle, author }));
+  const handleAddBook = () => {
+    const newBookData = {
+      item_id: 'item' + bookList.length,
+      title: bookTitle,
+      author,
+      category: 'unknown',
+    };
+
+    dispatch(addBookFromList(newBookData));
+    dispatch(addBookToServer(newBookData));
     setBookTitle('');
     setAuthor('');
   };
@@ -25,6 +33,7 @@ export default function AddNewBook() {
           className="text-style-13"
           value={bookTitle}
           onChange={(e) => setBookTitle(e.target.value)}
+          required
         ></input>
         <input
           type="text"
@@ -33,8 +42,14 @@ export default function AddNewBook() {
           className="text-style-13"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
+          required
         ></input>
-        <button type="submit" id="add-book__button" className="text-style-1" onClick={handleAddBook}>
+        <button
+          type="button"
+          id="add-book__button"
+          className="text-style-1"
+          onClick={handleAddBook}
+        >
           Add Book
         </button>
       </form>
